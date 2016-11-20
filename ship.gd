@@ -19,10 +19,6 @@ func _ready():
 func _fixed_process(delta):
 	#moving
 	var motion = Vector2()
-	if Input.is_action_pressed("move_up"):
-		motion += Vector2(0, -1)
-	if Input.is_action_pressed("move_down"):
-		motion += Vector2(0, 1)
 	if Input.is_action_pressed("move_left"):
 		motion += Vector2(-1, 0)
 	if Input.is_action_pressed("move_right"):

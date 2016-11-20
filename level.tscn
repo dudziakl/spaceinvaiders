@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://bg_gradient.tex" type="Texture" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ship.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ship.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 
@@ -44,10 +43,13 @@ transform/pos = Vector2( 255, 202 )
 
 transform/pos = Vector2( 362, 202 )
 
+[node name="enemy3" parent="enemies" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 467, 205 )
+
 [node name="ship" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 512, 522 )
 gravity_point = false
-script/script = ExtResource( 4 )
 
 
