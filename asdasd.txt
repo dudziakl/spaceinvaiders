@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 adasd
 
 asdasdsa
+=======
+kto pierwszy ten lepszy
+>>>>>>> 9d31ab484057c5fdef692a1beb9fc6e7fa4ddf2a
