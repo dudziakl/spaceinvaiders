@@ -42,7 +42,7 @@ func _fixed_process(delta):
 	var shooting = Input.is_action_pressed("shoot")
 	if (shooting and not prev_shooting):
 		# Just pressed
-		var shoot = preload("res://shoot.tscn").instance()
+		var shoot = preload("res://prefabs/shoot.tscn").instance()
 		# Use the Position2D as reference
 		shoot.set_pos(get_node("shootFrom").get_global_pos())
 		# Put it to parent so it is not moved by us

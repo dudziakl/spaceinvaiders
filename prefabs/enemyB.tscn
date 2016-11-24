@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://enemy.gd" type="Script" id=1]
-[ext_resource path="res://invaders1.tex" type="Texture" id=2]
+[ext_resource path="res://scripts/enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/invaders2.tex" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -0.158234, -17.1674, 16.2753, -4.0556, 16.9746, 16.9234, 0.715889, 17.0982, -16.9414, 17.0982, -16.5918, -4.0556 )
+points = Vector2Array( 0.108994, -21.5391, 23.4603, -1.65887, 23.4603, 16.9591, -23.0846, 17.1169, -23.0846, -1.50109 )
 
-[node name="enemy" type="Node2D"]
+[node name="enemyB" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -29,7 +29,7 @@ texture = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
 build_mode = 0
-polygon = Vector2Array( -0.158234, -17.1674, 16.2753, -4.0556, 16.9746, 16.9234, 0.715889, 17.0982, -16.9414, 17.0982, -16.5918, -4.0556 )
+polygon = Vector2Array( 0.108994, -21.5391, 23.4603, -1.65887, 23.4603, 16.9591, -23.0846, 17.1169, -23.0846, -1.50109 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
