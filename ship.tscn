@@ -1,19 +1,51 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://ship.gd" type="Script" id=1]
-[ext_resource path="res://playerShip1_blue.tex" type="Texture" id=2]
+[ext_resource path="res://dzialo.tex" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 50, 10, 0, 40, -50, 10, 0, -40 )
+points = Vector2Array( -37.7106, 7.38314, -37.8855, -1.88256, -32.9904, -1.35809, -0.473007, 7.38314 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -0.473007, -1.88256, -0.473007, 7.38314, -32.9904, -1.35809, -4.6688, -2.05738 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -32.9904, -1.35809, -33.1652, -6.07835, -21.452, -5.55388, -4.6688, -2.05738 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -4.6688, -5.90353, -4.6688, -2.05738, -21.452, -5.55388, -16.5569, -6.07835 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -16.5569, -6.07835, -21.452, -5.55388, -21.6268, -14.8196, -16.7317, -14.9944 )
 
 [node name="ship" type="Area2D"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 19.0559, 9.44053 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 19.0559, 9.44053 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 19.0559, 9.44053 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 19.0559, 9.44053 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 19.0559, 9.44053 )
+shapes/4/trigger = false
 gravity_point = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -27,14 +59,15 @@ texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
+transform/pos = Vector2( 19.0559, 9.44053 )
 build_mode = 0
-polygon = Vector2Array( 0, -40, -50, 10, 0, 40, 50, 10 )
-shape_range = Vector2( 0, 0 )
+polygon = Vector2Array( -21.6268, -14.8196, -16.7317, -14.9944, -16.5569, -6.07835, -4.6688, -5.90353, -4.6688, -2.05738, -0.473007, -1.88256, -0.473007, 7.38314, -37.7106, 7.38314, -37.8855, -1.88256, -32.9904, -1.35809, -33.1652, -6.07835, -21.452, -5.55388 )
+shape_range = Vector2( 0, 4 )
 trigger = false
 
 [node name="shootFrom" type="Position2D" parent="."]
 
-transform/pos = Vector2( 0, -40 )
+transform/pos = Vector2( 0, -15 )
 z/relative = false
 
 
