@@ -3,11 +3,6 @@ extends Area2D
 
 var destroyed=false
 
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
-
 func destroy():
 	if (destroyed):
 		return
