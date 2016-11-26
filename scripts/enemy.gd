@@ -1,12 +1,20 @@
 
 extends Area2D
 
-var destroyed=false
+var destroyed = false
+var horizontalSpeed = 1
+var verticalSpeed = 0.05
+var direction = -1
+var acceleration = 1
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	set_process(true)
+
+func _process(delta):
+	acceleration += delta * 0.1
+	direction = get_node("/root/Node2D/boundaries").direction_get()
+	translate(Vector2(direction*horizontalSpeed*acceleration,verticalSpeed*acceleration))
+
 
 func destroy():
 	if (destroyed):
