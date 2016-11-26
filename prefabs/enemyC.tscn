@@ -10,7 +10,7 @@ points = Vector2Array( -0.04879, -19.4879, 22.987, -11.2834, 22.987, 16.9591, -2
 
 [node name="enemyC" type="Node2D"]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[ "enemies" ]]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
