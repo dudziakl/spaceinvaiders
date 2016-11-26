@@ -21,6 +21,7 @@ extents = Vector2( 32, 32 )
 
 [node name="background" type="Sprite" parent="."]
 
+visibility/visible = false
 visibility/opacity = 0.425989
 transform/pos = Vector2( 400, 400 )
 z/relative = false
@@ -28,33 +29,249 @@ texture = ExtResource( 1 )
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="enemyA1" parent="enemies" instance=ExtResource( 2 )]
+transform/pos = Vector2( 9, -122 )
 
-transform/pos = Vector2( 399, 207 )
+[node name="line1" type="Node2D" parent="enemies"]
 
-[node name="enemyA2" parent="enemies" instance=ExtResource( 2 )]
+editor/display_folded = true
 
-transform/pos = Vector2( 451, 207 )
+[node name="enemyA1" parent="enemies/line1" instance=ExtResource( 2 )]
 
-[node name="enemyA3" parent="enemies" instance=ExtResource( 2 )]
+transform/pos = Vector2( 144, 208 )
 
-transform/pos = Vector2( 659, 207 )
+[node name="enemyA2" parent="enemies/line1" instance=ExtResource( 2 )]
 
-[node name="enemyB1" parent="enemies" instance=ExtResource( 3 )]
+transform/pos = Vector2( 193, 210 )
 
-transform/pos = Vector2( 659.788, 259.035 )
+[node name="enemyA3" parent="enemies/line1" instance=ExtResource( 2 )]
 
-[node name="enemyB2" parent="enemies" instance=ExtResource( 3 )]
+transform/pos = Vector2( 245, 207 )
 
-transform/pos = Vector2( 607.597, 260.505 )
+[node name="enemyA4" parent="enemies/line1" instance=ExtResource( 2 )]
 
-[node name="enemyC1" parent="enemies" instance=ExtResource( 4 )]
+transform/pos = Vector2( 300, 209 )
 
-transform/pos = Vector2( 556.465, 360.93 )
+[node name="enemyA5" parent="enemies/line1" instance=ExtResource( 2 )]
 
-[node name="enemyC2" parent="enemies" instance=ExtResource( 4 )]
+transform/pos = Vector2( 352, 209 )
 
-transform/pos = Vector2( 504.273, 361.665 )
+[node name="enemyA6" parent="enemies/line1" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 402, 207 )
+
+[node name="enemyA7" parent="enemies/line1" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 452, 210 )
+
+[node name="enemyA8" parent="enemies/line1" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 508, 208 )
+
+[node name="enemyA9" parent="enemies/line1" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 559, 209 )
+
+[node name="enemyA10" parent="enemies/line1" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 614, 208 )
+
+[node name="enemyA11" parent="enemies/line1" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 661, 209 )
+
+[node name="line2" type="Node2D" parent="enemies"]
+
+editor/display_folded = true
+transform/pos = Vector2( 2, 52 )
+
+[node name="enemyB1" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 138.788, 260.035 )
+
+[node name="enemyB2" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 193.597, 259.505 )
+
+[node name="enemyB3" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 245.788, 262.035 )
+
+[node name="enemyB4" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 297.788, 262.035 )
+
+[node name="enemyB5" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 348.788, 262.035 )
+
+[node name="enemyB6" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 399.788, 262.035 )
+
+[node name="enemyB7" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 451.788, 262.035 )
+
+[node name="enemyB8" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 502.788, 262.035 )
+
+[node name="enemyB9" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 556.788, 260.035 )
+
+[node name="enemyB10" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 607.788, 261.035 )
+
+[node name="enemyB11" parent="enemies/line2" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 660.788, 261.035 )
+
+[node name="line3" type="Node2D" parent="enemies"]
+
+editor/display_folded = true
+
+[node name="enemyB1" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 138.788, 260.035 )
+
+[node name="enemyB2" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 193.597, 259.505 )
+
+[node name="enemyB3" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 245.788, 262.035 )
+
+[node name="enemyB4" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 297.788, 262.035 )
+
+[node name="enemyB5" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 348.788, 262.035 )
+
+[node name="enemyB6" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 399.788, 262.035 )
+
+[node name="enemyB7" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 451.788, 262.035 )
+
+[node name="enemyB8" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 502.788, 262.035 )
+
+[node name="enemyB9" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 556.788, 260.035 )
+
+[node name="enemyB10" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 607.788, 261.035 )
+
+[node name="enemyB11" parent="enemies/line3" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 660.788, 261.035 )
+
+[node name="line4" type="Node2D" parent="enemies"]
+
+editor/display_folded = true
+
+[node name="enemyC1" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 144.465, 359.93 )
+
+[node name="enemyC2" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 194, 358.665 )
+
+[node name="enemyC3" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 245, 362.665 )
+
+[node name="enemyC4" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 298, 360.665 )
+
+[node name="enemyC5" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 349, 362.665 )
+
+[node name="enemyC6" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 403, 362.665 )
+
+[node name="enemyC7" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 454, 362.665 )
+
+[node name="enemyC8" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 503, 361.665 )
+
+[node name="enemyC9" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 557, 361.665 )
+
+[node name="enemyC10" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 607, 362.665 )
+
+[node name="enemyC11" parent="enemies/line4" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 661, 360.665 )
+
+[node name="line5" type="Node2D" parent="enemies"]
+
+editor/display_folded = true
+transform/pos = Vector2( -3, 49 )
+
+[node name="enemyC1" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 144.465, 359.93 )
+
+[node name="enemyC2" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 194, 358.665 )
+
+[node name="enemyC3" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 245, 362.665 )
+
+[node name="enemyC4" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 298, 360.665 )
+
+[node name="enemyC5" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 349, 362.665 )
+
+[node name="enemyC6" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 403, 362.665 )
+
+[node name="enemyC7" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 454, 362.665 )
+
+[node name="enemyC8" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 503, 361.665 )
+
+[node name="enemyC9" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 557, 361.665 )
+
+[node name="enemyC10" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 607, 362.665 )
+
+[node name="enemyC11" parent="enemies/line5" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 661, 360.665 )
 
 [node name="ship" parent="." instance=ExtResource( 5 )]
 
@@ -63,6 +280,7 @@ gravity_point = false
 
 [node name="boundaries" type="Node2D" parent="."]
 
+editor/display_folded = true
 script/script = ExtResource( 6 )
 
 [node name="boundaryLeft" type="Area2D" parent="boundaries"]

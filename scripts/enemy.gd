@@ -2,15 +2,18 @@
 extends Area2D
 
 var destroyed = false
-var speed = 50
+var horizontalSpeed = 1
+var verticalSpeed = 0.05
 var direction = -1
+var acceleration = 1
 
 func _ready():
 	set_process(true)
 
 func _process(delta):
+	acceleration += delta * 0.1
 	direction = get_node("/root/Node2D/boundaries").direction_get()
-	translate(Vector2(direction*delta*speed,0))
+	translate(Vector2(direction*horizontalSpeed*acceleration,verticalSpeed*acceleration))
 
 
 func destroy():
