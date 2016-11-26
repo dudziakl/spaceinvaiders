@@ -8,10 +8,14 @@ func direction_get():
 	return direction
 
 func _on_boundaryLeft_area_enter( area ):
-	if(area.get_name().begins_with("enemy")):
-		direction = -1
+	#if(area.get_parent().get_name().begins_with("enemy")):
+	#print(area.get_groups())
+	if(area.is_in_group("enemies")):
+		#go right
+		direction = 1
 
 
 func _on_boundaryRight_area_enter( area ):
-	if(area.get_name().begins_with("enemy")):
-		direction = 1
+	if(area.is_in_group("enemies")):
+		#go left
+		direction = -1
