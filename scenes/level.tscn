@@ -33,8 +33,6 @@ transform/pos = Vector2( 9, -122 )
 
 [node name="line1" type="Node2D" parent="enemies"]
 
-editor/display_folded = true
-
 [node name="enemyA1" parent="enemies/line1" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 132, 328 )
@@ -78,6 +76,10 @@ transform/pos = Vector2( 600, 328 )
 [node name="enemyA11" parent="enemies/line1" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 652, 328 )
+
+[node name="enemyA12" parent="enemies/line1" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 523, 824 )
 
 [node name="line2" type="Node2D" parent="enemies"]
 
@@ -320,6 +322,70 @@ angular_damp = 1.0
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
+
+[node name="UI" type="Node2D" parent="."]
+
+transform/pos = Vector2( 17, 720 )
+
+[node name="LivesLabel" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 14.0
+text = "Lives:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="LivesValue" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 42.0
+margin/top = 0.0
+margin/right = 82.0
+margin/bottom = 14.0
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 16.0
+margin/right = 40.0
+margin/bottom = 30.0
+text = "Score:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ScoreValue" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 42.0
+margin/top = 17.0
+margin/right = 82.0
+margin/bottom = 31.0
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="area_enter" from="boundaries/boundaryLeft" to="boundaries" method="_on_boundaryLeft_area_enter"]
 

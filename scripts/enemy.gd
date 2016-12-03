@@ -15,6 +15,8 @@ func _process(delta):
 	direction = get_node("/root/Node2D/boundaries").direction_get()
 	translate(Vector2(direction*horizontalSpeed*acceleration,verticalSpeed*acceleration))
 
+func is_enemy():
+	return not destroyed
 
 func destroy():
 	if (destroyed):
