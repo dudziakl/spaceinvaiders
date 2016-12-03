@@ -6,7 +6,7 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 0.108994, -21.5391, 23.4603, -1.65887, 23.4603, 16.9591, -23.0846, 17.1169, -23.0846, -1.50109 )
+points = Vector2Array( 0.108994, -21.5391, 18.8972, -1.94268, 18.316, 13.5542, -18.4892, 13.7479, -18.4892, -1.74897 )
 
 [node name="enemyB" type="Node2D"]
 
@@ -24,12 +24,13 @@ script/script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Area2D"]
 
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
 build_mode = 0
-polygon = Vector2Array( 0.108994, -21.5391, 23.4603, -1.65887, 23.4603, 16.9591, -23.0846, 17.1169, -23.0846, -1.50109 )
+polygon = Vector2Array( 0.108994, -21.5391, 18.8972, -1.94268, 18.316, 13.5542, -18.4892, 13.7479, -18.4892, -1.74897 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
