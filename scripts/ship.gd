@@ -7,10 +7,6 @@ var screen_size
 var prev_shooting = false
 var killed = false
 
-# member variables here, example:
-# var a=2
-# var b="textvar"
-
 func _ready():
 	# Called every time the node is added to the scene.
 	screen_size = get_viewport().get_rect().size
@@ -40,6 +36,9 @@ func _fixed_process(delta):
 	
 	#shooting
 	var shooting = Input.is_action_pressed("shoot")
+	#check if there is other shoot on map and prevent to fire twice
+	prev_shooting = has_node("../shoot")
+	
 	if (shooting and not prev_shooting):
 		# Just pressed
 		var shoot = preload("res://prefabs/shoot.tscn").instance()
@@ -49,5 +48,3 @@ func _fixed_process(delta):
 		get_node("..").add_child(shoot)
 		# Play sound
 		#get_node("sfx").play("shoot")
-	
-	prev_shooting = shooting
