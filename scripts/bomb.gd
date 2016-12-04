@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 800
+const SPEED = 300
 
 var hit = false
 
@@ -8,7 +8,7 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	translate(Vector2(0, -delta*SPEED))
+	translate(Vector2(0, delta*SPEED))
 
 func _on_visibility_exit_screen():
 	queue_free()
