@@ -2,6 +2,7 @@
 extends Area2D
 
 export var points = 0
+export var canShoot = false
 
 var destroyed = false
 var horizontalSpeed = 1

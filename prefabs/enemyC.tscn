@@ -41,6 +41,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
 points = 10
+canShoot = false
 
 [node name="Sprite" type="Sprite" parent="Area2D"]
 
@@ -55,6 +56,10 @@ build_mode = 0
 polygon = Vector2Array( -0.0491447, -14.2867, 19.0421, -10.8155, 19.0421, 14.1136, -18.9826, 14.1136, -18.9826, -11.1311 )
 shape_range = Vector2( 0, 0 )
 trigger = false
+
+[node name="shootFrom" type="Position2D" parent="Area2D"]
+
+transform/pos = Vector2( 0, 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
