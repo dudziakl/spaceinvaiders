@@ -29,9 +29,12 @@ texture = ExtResource( 1 )
 
 [node name="enemies" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 9, -122 )
 
 [node name="line1" type="Node2D" parent="enemies"]
+
+editor/display_folded = true
 
 [node name="enemyA1" parent="enemies/line1" instance=ExtResource( 2 )]
 
@@ -383,6 +386,52 @@ margin/top = 17.0
 margin/right = 82.0
 margin/bottom = 31.0
 text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="HighScoreLabel" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 32.0
+margin/right = 72.0
+margin/bottom = 46.0
+text = "High score:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="HighScoreValue" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 76.0
+margin/top = 33.0
+margin/right = 116.0
+margin/bottom = 47.0
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="GameOverLabel" type="Label" parent="UI"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 284.0
+margin/top = -603.0
+margin/right = 372.0
+margin/bottom = -589.0
+text = "GAME OVER"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

@@ -1,6 +1,8 @@
 
 extends Area2D
 
+export var points = 0
+
 var destroyed = false
 var horizontalSpeed = 1
 var verticalSpeed = 0.05
@@ -28,6 +30,6 @@ func destroy():
 	#play explosion sound
 	#get_node("sfx").play("sound_explode")
 	# add points to score
-	#get_node("/root/game_state").points += 5
+	get_node("/root/game_state").score += points
 	queue_free()
 

@@ -8,17 +8,17 @@ var prev_shooting = false
 var lives = 3
 
 func _ready():
-	# Called every time the node is added to the scene.
+	get_node("../UI/GameOverLabel").hide()
 	screen_size = get_viewport().get_rect().size
 	set_fixed_process(true)
 
 func _fixed_process(delta):
-	player_moving(delta)	
+	player_moving(delta)
 	player_shooting()
 	
 	#update UI
 	get_node("../UI/LivesValue").set_text(str(lives))
-	#get_node("../UI/LivesScore").set_text(str(get_node("/root/game_state").score))
+	get_node("../UI/ScoreValue").set_text(str(get_node("/root/game_state").score))
 
 
 func player_moving(delta):
@@ -58,7 +58,7 @@ func player_shooting():
 		#get_node("sfx").play("shoot")
 
 func _hit_something():
-	if (lives > 0):
+	if (lives > 1):
 		#get_node("anim").play("explode")
 		#get_node("sfx").play("sound_explode")
 		#add delay and restart position
@@ -66,9 +66,10 @@ func _hit_something():
 		return
 	#get_node("anim").play("explode")
 	#get_node("sfx").play("sound_explode")
-	#get_node("../hud/game_over").show()
-	get_node("/root/scripts/game_state").game_over()
-	get_parent().stop()
+	get_node("../UI/GameOverLabel").show()
+	print("game over")
+	get_node("/root/game_state").game_over()
+	set_fixed_process(false)
 	set_process(false)
 
 func _on_ship_body_enter( body ):
