@@ -46,7 +46,6 @@ text = "= 10 POINTS"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-__meta__ = { "_edit_lock_":true }
 
 [node name="srednistatek" type="TextureFrame" parent="."]
 
