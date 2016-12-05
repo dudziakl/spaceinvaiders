@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://assets/czcionka1.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://assets/fontscary.fnt" type="BitmapFont" id=1]
 
 [node name="VBoxContainer" type="VBoxContainer"]
 
@@ -8,11 +8,29 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 26.0
-margin/top = 19.0
+margin/left = 0.0
+margin/top = 0.0
 margin/right = 800.0
 margin/bottom = 800.0
 alignment = 0
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 800.0
+margin/bottom = 269.0
+custom_fonts/font = ExtResource( 1 )
+text = "\nTEAM#5 PRESENTS\nSPACE INVADERS\nAWESOME REMAKE\n\nINSERT COIN (OR NOT)\nONLY 1 PLAYER\n"
+align = 1
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="MenuButton" type="MenuButton" parent="."]
 
@@ -21,9 +39,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
-margin/right = 774.0
-margin/bottom = 39.0
+margin/top = 273.0
+margin/right = 800.0
+margin/bottom = 310.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 toggle_mode = false
@@ -41,9 +59,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 43.0
-margin/right = 774.0
-margin/bottom = 82.0
+margin/top = 314.0
+margin/right = 800.0
+margin/bottom = 351.0
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = false
 click_on_press = true
