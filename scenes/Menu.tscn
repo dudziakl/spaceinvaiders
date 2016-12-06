@@ -17,7 +17,7 @@ margin/top = 0.0
 margin/right = 800.0
 margin/bottom = 800.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Intro" type="Label" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -35,7 +35,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="MenuButton" type="MenuButton" parent="."]
+[node name="NewGameButton" type="MenuButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -74,70 +74,120 @@ text = "quit"
 flat = true
 items = [  ]
 
-[node name="TextureFrame" type="TextureFrame" parent="."]
+[node name="Ship1" type="TextureFrame" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 110.0
-margin/top = 320.0
-margin/right = 162.0
-margin/bottom = 360.0
+margin/left = 260.0
+margin/top = 350.0
+margin/right = 312.0
+margin/bottom = 390.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="TextureFrame"]
+[node name="10pts" type="Label" parent="Ship1"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
+margin/left = 60.0
 margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 14.0
+margin/right = 230.0
+margin/bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+text = "= 10 POINTS"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="TextureFrame 2" type="TextureFrame" parent="."]
+[node name="Ship2" type="TextureFrame" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 110.0
-margin/top = 370.0
-margin/right = 162.0
-margin/bottom = 410.0
+margin/left = 260.0
+margin/top = 400.0
+margin/right = 312.0
+margin/bottom = 440.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="TextureFrame 3" type="TextureFrame" parent="."]
+[node name="20pts" type="Label" parent="Ship2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 60.0
+margin/top = 0.0
+margin/right = 240.0
+margin/bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+text = "= 20 POINTS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Ship3" type="TextureFrame" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 110.0
-margin/top = 420.0
-margin/right = 162.0
-margin/bottom = 460.0
+margin/left = 260.0
+margin/top = 450.0
+margin/right = 312.0
+margin/bottom = 490.0
 texture = ExtResource( 4 )
 stretch_mode = 0
 
-[node name="TextureFrame 4" type="TextureFrame" parent="."]
+[node name="30pts" type="Label" parent="Ship3"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 60.0
+margin/top = 0.0
+margin/right = 230.0
+margin/bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+text = "= 30 POINTS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Ship4" type="TextureFrame" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 110.0
-margin/top = 470.0
-margin/right = 162.0
-margin/bottom = 510.0
+margin/left = 260.0
+margin/top = 500.0
+margin/right = 312.0
+margin/bottom = 540.0
 texture = ExtResource( 5 )
 stretch_mode = 0
+
+[node name="mystery" type="Label" parent="Ship4"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 60.0
+margin/top = 0.0
+margin/right = 230.0
+margin/bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+text = "= \?\?\? MYSTERY"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
