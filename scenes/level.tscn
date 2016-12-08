@@ -38,10 +38,9 @@ transform/pos = Vector2( 9, -122 )
 
 editor/display_folded = true
 
-[node name="enemyC1 2" parent="enemies/col1" instance=ExtResource( 3 )]
+[node name="enemyC1 2" parent="enemies/col1" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 129, 533 )
-canShoot = true
 
 [node name="enemyC1" parent="enemies/col1" instance=ExtResource( 3 )]
 
@@ -63,10 +62,9 @@ transform/pos = Vector2( 132, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC2 2" parent="enemies/col2" instance=ExtResource( 3 )]
+[node name="enemyC2 2" parent="enemies/col2" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 181, 533 )
-canShoot = true
 
 [node name="enemyC2" parent="enemies/col2" instance=ExtResource( 3 )]
 
@@ -88,10 +86,9 @@ transform/pos = Vector2( 184, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC3 2" parent="enemies/col3" instance=ExtResource( 3 )]
+[node name="enemyC3 2" parent="enemies/col3" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 233, 533 )
-canShoot = true
 
 [node name="enemyC3" parent="enemies/col3" instance=ExtResource( 3 )]
 
@@ -113,10 +110,9 @@ transform/pos = Vector2( 236, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC4" parent="enemies/col4" instance=ExtResource( 3 )]
+[node name="enemyC4" parent="enemies/col4" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 285, 533 )
-canShoot = true
 
 [node name="enemyC4 2" parent="enemies/col4" instance=ExtResource( 3 )]
 
@@ -138,10 +134,9 @@ transform/pos = Vector2( 288, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC5" parent="enemies/col5" instance=ExtResource( 3 )]
+[node name="enemyC5" parent="enemies/col5" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 337, 533 )
-canShoot = true
 
 [node name="enemyC5 2" parent="enemies/col5" instance=ExtResource( 3 )]
 
@@ -163,10 +158,9 @@ transform/pos = Vector2( 340, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC6" parent="enemies/col6" instance=ExtResource( 3 )]
+[node name="enemyC6" parent="enemies/col6" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 389, 533 )
-canShoot = true
 
 [node name="enemyC6 2" parent="enemies/col6" instance=ExtResource( 3 )]
 
@@ -188,10 +182,9 @@ transform/pos = Vector2( 392, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC7" parent="enemies/col7" instance=ExtResource( 3 )]
+[node name="enemyC7" parent="enemies/col7" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 441, 533 )
-canShoot = true
 
 [node name="enemyC7 2" parent="enemies/col7" instance=ExtResource( 3 )]
 
@@ -213,10 +206,9 @@ transform/pos = Vector2( 444, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC8" parent="enemies/col8" instance=ExtResource( 3 )]
+[node name="enemyC8" parent="enemies/col8" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 493, 533 )
-canShoot = true
 
 [node name="enemyC8 2" parent="enemies/col8" instance=ExtResource( 3 )]
 
@@ -236,10 +228,11 @@ transform/pos = Vector2( 496, 328 )
 
 [node name="col9" type="Node2D" parent="enemies"]
 
-[node name="enemyC9" parent="enemies/col9" instance=ExtResource( 3 )]
+editor/display_folded = true
+
+[node name="enemyC9" parent="enemies/col9" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 545, 533 )
-canShoot = true
 
 [node name="enemyC9 2" parent="enemies/col9" instance=ExtResource( 3 )]
 
@@ -261,10 +254,9 @@ transform/pos = Vector2( 548, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC10" parent="enemies/col10" instance=ExtResource( 3 )]
+[node name="enemyC10" parent="enemies/col10" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 597, 533 )
-canShoot = true
 
 [node name="enemyC10 2" parent="enemies/col10" instance=ExtResource( 3 )]
 
@@ -286,10 +278,9 @@ transform/pos = Vector2( 600, 328 )
 
 editor/display_folded = true
 
-[node name="enemyC11" parent="enemies/col11" instance=ExtResource( 3 )]
+[node name="enemyC11" parent="enemies/col11" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 649, 533 )
-canShoot = true
 
 [node name="enemyC11 2" parent="enemies/col11" instance=ExtResource( 3 )]
 
@@ -469,7 +460,7 @@ max_lines_visible = -1
 [node name="Timer" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.7
 one_shot = false
 autostart = true
 

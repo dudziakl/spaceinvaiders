@@ -17,8 +17,8 @@ func _on_visibility_exit_screen():
 
 func _on_shoot_area_enter( area ):
 	#Hit an enemy
+	print("Hit: " + area.get_name())
 	if (area.has_method("destroy")):
-		# Duck typing at it's best
 		area.destroy()
 		_hit_something()
 
