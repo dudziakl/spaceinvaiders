@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://assets/fontscary.fnt" type="BitmapFont" id=1]
-[ext_resource path="res://assets/invaders1.tex" type="Texture" id=2]
-[ext_resource path="res://assets/invaders2.tex" type="Texture" id=3]
-[ext_resource path="res://assets/invaders3.tex" type="Texture" id=4]
-[ext_resource path="res://assets/statek.tex" type="Texture" id=5]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/fontscary.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://assets/invaders1.tex" type="Texture" id=3]
+[ext_resource path="res://assets/invaders2.tex" type="Texture" id=4]
+[ext_resource path="res://assets/invaders3.tex" type="Texture" id=5]
+[ext_resource path="res://assets/statek.tex" type="Texture" id=6]
 
 [node name="panel" type="Panel"]
 
@@ -16,6 +17,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 800.0
 margin/bottom = 800.0
+script/script = ExtResource( 1 )
 
 [node name="Intro" type="Label" parent="."]
 
@@ -27,7 +29,7 @@ margin/left = 240.0
 margin/top = 40.0
 margin/right = 560.0
 margin/bottom = 309.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "TEAM#5 PRESENTS\n\nSPACE INVADERS\nAWESOME REMAKE\n\nINSERT COIN (OR NOT)\n\nONLY SINGLE PLAYER"
 align = 1
 clip_text = true
@@ -45,7 +47,7 @@ margin/left = 0.0
 margin/top = 630.0
 margin/right = 800.0
 margin/bottom = 667.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 toggle_mode = false
 click_on_press = true
@@ -65,7 +67,7 @@ margin/left = 0.0
 margin/top = 700.0
 margin/right = 800.0
 margin/bottom = 737.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 0
@@ -84,7 +86,7 @@ margin/left = 290.0
 margin/top = 350.0
 margin/right = 342.0
 margin/bottom = 390.0
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 stretch_mode = 0
 
 [node name="10pts" type="Label" parent="Ship1"]
@@ -97,7 +99,7 @@ margin/left = 60.0
 margin/top = 0.0
 margin/right = 230.0
 margin/bottom = 40.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "= 10 POINTS"
 percent_visible = 1.0
 lines_skipped = 0
@@ -113,7 +115,7 @@ margin/left = 290.0
 margin/top = 400.0
 margin/right = 342.0
 margin/bottom = 440.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 
 [node name="20pts" type="Label" parent="Ship2"]
@@ -126,7 +128,7 @@ margin/left = 60.0
 margin/top = 0.0
 margin/right = 240.0
 margin/bottom = 40.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "= 20 POINTS"
 percent_visible = 1.0
 lines_skipped = 0
@@ -142,7 +144,7 @@ margin/left = 290.0
 margin/top = 450.0
 margin/right = 342.0
 margin/bottom = 490.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="30pts" type="Label" parent="Ship3"]
@@ -155,7 +157,7 @@ margin/left = 60.0
 margin/top = 0.0
 margin/right = 230.0
 margin/bottom = 40.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "= 30 POINTS"
 percent_visible = 1.0
 lines_skipped = 0
@@ -171,7 +173,7 @@ margin/left = 290.0
 margin/top = 500.0
 margin/right = 342.0
 margin/bottom = 540.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 stretch_mode = 0
 
 [node name="mystery" type="Label" parent="Ship4"]
@@ -184,10 +186,14 @@ margin/left = 60.0
 margin/top = 0.0
 margin/right = 230.0
 margin/bottom = 40.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "= \?\?\? MYSTERY"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[connection signal="pressed" from="NewGameButton" to="." method="_on_NewGameButton_pressed"]
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
 
 

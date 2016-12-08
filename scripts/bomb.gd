@@ -1,26 +1,21 @@
-
 extends Area2D
 
-const SPEED = 800
+const SPEED = 300
 
 var hit = false
-
 
 func _ready():
 	set_process(true)
 
 func _process(delta):
-	translate(Vector2(0, -delta*SPEED))
+	translate(Vector2(0, delta*SPEED))
 
 func _on_visibility_exit_screen():
 	queue_free()
 
-func _on_shoot_area_enter( area ):
-	#Hit an enemy
-	print("Hit: " + area.get_name())
-	if (area.has_method("destroy")):
-		area.destroy()
-		_hit_something()
+func _on_bomb_area_enter( area ):
+	#Hit the player
+	pass
 
 func _hit_something():
 	if (hit):

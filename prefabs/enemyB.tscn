@@ -8,9 +8,7 @@
 custom_solver_bias = 0.0
 points = Vector2Array( 0.108994, -21.5391, 18.8972, -1.94268, 18.316, 13.5542, -18.4892, 13.7479, -18.4892, -1.74897 )
 
-[node name="enemyB" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="." groups=[ "enemies" ]]
+[node name="enemyB" type="Area2D" groups=[ "enemies" ]]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -22,17 +20,22 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
 points = 20
+canShoot = false
 
-[node name="Sprite" type="Sprite" parent="Area2D"]
+[node name="Sprite" type="Sprite" parent="."]
 
 transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
 build_mode = 0
 polygon = Vector2Array( 0.108994, -21.5391, 18.8972, -1.94268, 18.316, 13.5542, -18.4892, 13.7479, -18.4892, -1.74897 )
 shape_range = Vector2( 0, 0 )
 trigger = false
+
+[node name="shootFrom" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, 20 )
 
 

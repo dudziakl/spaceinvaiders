@@ -25,11 +25,16 @@ func destroy():
 		return
 	destroyed = true
 	#animate explode
-	#get_node("anim").play("explode")	
+	#get_node("anim").play("explode")
 	set_fixed_process(false)
 	#play explosion sound
 	#get_node("sfx").play("sound_explode")
 	# add points to score
 	get_node("/root/game_state").score += points
+	# call next invader to shoot
+	if (is_in_group("bombers")): 
+		if(get_parent().get_child_count() > 1):
+			#print("Next enemy: " +get_parent().get_children()[1].get_name())
+			get_parent().get_children()[1].add_to_group("bombers") = true
 	queue_free()
-
+	
