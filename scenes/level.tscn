@@ -32,6 +32,7 @@ texture = ExtResource( 2 )
 
 [node name="enemies" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 9, -122 )
 
 [node name="col1" type="Node2D" parent="enemies"]
@@ -300,7 +301,7 @@ transform/pos = Vector2( 652, 328 )
 
 [node name="ship" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 607, 707 )
+transform/pos = Vector2( 400, 707 )
 gravity_point = false
 
 [node name="boundaries" type="Node2D" parent="."]

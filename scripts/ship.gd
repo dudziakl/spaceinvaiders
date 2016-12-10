@@ -57,24 +57,29 @@ func player_shooting():
 		# Play sound
 		#get_node("sfx").play("shoot")
 
-func _hit_something():
-	if (lives > 1):
+func hit_something():
+	lives -= 1
+	get_node("../UI/LivesValue").set_text(str(lives))
+	
+	if (lives < 1):
 		#get_node("anim").play("explode")
 		#get_node("sfx").play("sound_explode")
+		print("game over")
+		get_node("../UI/GameOverLabel").show()
+		get_node("/root/game_state").game_over()
+		set_fixed_process(false)
+		set_process(false)
+	else:
 		#add delay and restart position
-		lives += -1
-		return
-	#get_node("anim").play("explode")
-	#get_node("sfx").play("sound_explode")
-	get_node("../UI/GameOverLabel").show()
-	print("game over")
-	get_node("/root/game_state").game_over()
-	set_fixed_process(false)
-	set_process(false)
+		var pos = get_pos()
+		pos.x = 400
+		set_pos(pos)
+		#get_node("anim").play("explode")
+		#get_node("sfx").play("sound_explode")
 
 func _on_ship_body_enter( body ):
-	_hit_something()
+	hit_something()
 
 func _on_ship_area_enter( area ):
 	if(area.is_in_group("enemies") and area.is_enemy()):
-		_hit_something()
+		hit_something()
