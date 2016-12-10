@@ -6,6 +6,7 @@ const SPEED = 200
 var screen_size
 var prev_shooting = false
 var lives = 3
+var shootCount = 0
 
 func _ready():
 	get_node("../UI/GameOverLabel").hide()
@@ -48,7 +49,9 @@ func player_shooting():
 	prev_shooting = has_node("../shoot")
 	
 	if (shooting and not prev_shooting):
-		# Just pressed
+		shootCount += 1
+		print("Shoot count: " + str(shootCount) + " " + str(shootCount % 15 == 0))
+		# Just pressed		
 		var shoot = preload("res://prefabs/shoot.tscn").instance()
 		# Use the Position2D as reference
 		shoot.set_pos(get_node("shootFrom").get_global_pos())
@@ -56,6 +59,12 @@ func player_shooting():
 		get_node("..").add_child(shoot)
 		# Play sound
 		#get_node("sfx").play("shoot")
+		
+		#spawn Enemy Special ship depends on number of player shoots
+		if(shootCount != 15 and (shootCount == 22 or shootCount % 15 == 0)):
+			var enemyS = preload("res://prefabs/enemyS.tscn").instance()
+			enemyS.set_pos(get_node("../enemyCFrom").get_global_pos())
+			get_node("..").add_child(enemyS)
 
 func hit_something():
 	lives -= 1
@@ -69,6 +78,10 @@ func hit_something():
 		get_node("/root/game_state").game_over()
 		set_fixed_process(false)
 		set_process(false)
+		get_node("../BombingTimer").stop()
+		var enemies = get_tree().get_nodes_in_group("enemies")
+		for e in enemies:
+			e.set_fixed_process(false)
 	else:
 		#add delay and restart position
 		var pos = get_pos()

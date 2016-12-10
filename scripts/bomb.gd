@@ -15,7 +15,7 @@ func _on_visibility_exit_screen():
 	queue_free()
 
 func _on_bomb_area_enter( area ):
-	if(area.get_name() == "ship"):
+	if(area.get_name() == "player"):
 		#Hit the player
 		area.hit_something()
 		hit_something()

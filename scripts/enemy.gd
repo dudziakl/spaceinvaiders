@@ -10,9 +10,9 @@ var direction = -1
 var acceleration = 1
 
 func _ready():
-	set_process(true)
+	set_fixed_process(true)
 
-func _process(delta):
+func _fixed_process(delta):
 	acceleration += delta * 0.1
 	direction = get_node("/root/Node2D/boundaries").direction_get()
 	translate(Vector2(direction*horizontalSpeed*acceleration,verticalSpeed*acceleration))
