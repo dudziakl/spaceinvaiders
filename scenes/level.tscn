@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://assets/background.tex" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://prefabs/enemyA.tscn" type="PackedScene" id=5]
 [ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/boundaries.gd" type="Script" id=7]
+[ext_resource path="res://prefabs/bunker.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -33,7 +34,8 @@ texture = ExtResource( 2 )
 [node name="enemies" type="Node2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 9, -122 )
+transform/pos = Vector2( 7, -187 )
+__meta__ = { "_edit_group_":true }
 
 [node name="col1" type="Node2D" parent="enemies"]
 
@@ -451,25 +453,46 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 258.0
-margin/top = -630.0
-margin/right = 404.0
-margin/bottom = -599.0
+margin/left = -17.0
+margin/top = -428.0
+margin/right = 383.0
+margin/bottom = -414.0
 text = "GAME OVER"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="enemyCFrom" type="Position2D" parent="."]
+
+transform/pos = Vector2( 790, 97 )
+
+[node name="bunkers" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="bunker" parent="bunkers" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 152, 639 )
+
+[node name="bunker1" parent="bunkers" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 312, 639 )
+
+[node name="bunker2" parent="bunkers" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 482, 639 )
+
+[node name="bunker3" parent="bunkers" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 642, 639 )
+
 [node name="BombingTimer" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.5
 one_shot = false
 autostart = true
-
-[node name="enemyCFrom" type="Position2D" parent="."]
-
-transform/pos = Vector2( 790, 150 )
 
 [connection signal="area_enter" from="boundaries/boundaryLeft" to="boundaries" method="_on_boundaryLeft_area_enter"]
 

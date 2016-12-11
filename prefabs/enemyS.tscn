@@ -13,7 +13,7 @@ points = Vector2Array( -7.93771, 13.6457, -25.2934, 1.97001, 0.424583, -21.2235,
 custom_solver_bias = 0.0
 points = Vector2Array( 0.109032, 9.54341, 0.424583, -21.2235, 24.407, 2.28556, 8.15577, 13.6457 )
 
-[node name="enemyS" type="Area2D" groups=[ "enemies", "bombers" ]]
+[node name="enemyS" type="Area2D" groups=[ "bombers", "enemies" ]]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -42,7 +42,7 @@ trigger = false
 
 [node name="shootFrom" type="Position2D" parent="."]
 
-transform/pos = Vector2( 0, 20 )
+transform/pos = Vector2( 0, 30 )
 
 [node name="visibility" type="VisibilityNotifier2D" parent="."]
 

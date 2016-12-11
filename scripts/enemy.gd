@@ -5,7 +5,7 @@ export var points = 0
 
 var destroyed = false
 var horizontalSpeed = 1
-var verticalSpeed = 0.05
+var verticalSpeed = 0.03
 var direction = -1
 var acceleration = 1
 

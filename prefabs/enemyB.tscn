@@ -20,7 +20,6 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
 points = 20
-canShoot = false
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -36,6 +35,6 @@ trigger = false
 
 [node name="shootFrom" type="Position2D" parent="."]
 
-transform/pos = Vector2( 0, 20 )
+transform/pos = Vector2( 0, 30 )
 
 

@@ -19,6 +19,13 @@ func _on_bomb_area_enter( area ):
 		#Hit the player
 		area.hit_something()
 		hit_something()
+	
+	if (area.has_method("destroy") and not area.is_in_group("enemies")):
+		#Hit bunker
+		area.destroy()
+		hit_something()
+	
+	
 
 func hit_something():
 	if (hit):

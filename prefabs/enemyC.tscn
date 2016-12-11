@@ -37,6 +37,6 @@ trigger = false
 
 [node name="shootFrom" type="Position2D" parent="."]
 
-transform/pos = Vector2( 0, 20 )
+transform/pos = Vector2( 0, 30 )
 
 

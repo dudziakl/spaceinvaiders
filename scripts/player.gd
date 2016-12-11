@@ -50,7 +50,7 @@ func player_shooting():
 	
 	if (shooting and not prev_shooting):
 		shootCount += 1
-		print("Shoot count: " + str(shootCount) + " " + str(shootCount % 15 == 0))
+		#print("Shoot count: " + str(shootCount) + " " + str(shootCount % 15 == 0))
 		# Just pressed		
 		var shoot = preload("res://prefabs/shoot.tscn").instance()
 		# Use the Position2D as reference
