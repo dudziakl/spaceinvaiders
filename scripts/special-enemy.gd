@@ -34,6 +34,8 @@ func destroy():
 
 func _on_visibility_exit_screen():
 	queue_free()
+	get_node("/root/level").check_if_level_completed()
 
 func _on_ScoreDisplayTimer_timeout():
 	queue_free()
+	get_node("/root/level").check_if_level_completed()

@@ -5,21 +5,15 @@ const SPEED = 200
 
 var screen_size
 var prev_shooting = false
-var lives = 3
 var shootCount = 0
 
 func _ready():
-	get_node("../UI/GameOverLabel").hide()
 	screen_size = get_viewport().get_rect().size
 	set_fixed_process(true)
 
 func _fixed_process(delta):
 	player_moving(delta)
 	player_shooting()
-	
-	#update UI
-	get_node("../UI/LivesValue").set_text(str(lives))
-	get_node("../UI/ScoreValue").set_text(str(get_node("/root/game_state").score))
 
 
 func player_moving(delta):
@@ -67,21 +61,14 @@ func player_shooting():
 			get_node("..").add_child(enemyS)
 
 func hit_something():
-	lives -= 1
-	get_node("../UI/LivesValue").set_text(str(lives))
-	
-	if (lives < 1):
+	get_node("/root/game_state").lives -= 1
+		
+	if (get_node("/root/game_state").lives < 1):
 		#get_node("anim").play("explode")
-		#get_node("sfx").play("sound_explode")
-		print("game over")
-		get_node("../UI/GameOverLabel").show()
-		get_node("/root/game_state").game_over()
+		#get_node("sfx").play("sound_explode")		
+		get_parent().level_failed()
 		set_fixed_process(false)
-		set_process(false)
-		get_node("../BombingTimer").stop()
-		var enemies = get_tree().get_nodes_in_group("enemies")
-		for e in enemies:
-			e.set_fixed_process(false)
+		
 	else:
 		#add delay and restart position
 		var pos = get_pos()

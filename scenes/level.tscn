@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://assets/background.tex" type="Texture" id=2]
@@ -7,7 +7,12 @@
 [ext_resource path="res://prefabs/enemyA.tscn" type="PackedScene" id=5]
 [ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/boundaries.gd" type="Script" id=7]
-[ext_resource path="res://prefabs/bunker.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/fontscary.fnt" type="BitmapFont" id=8]
+[ext_resource path="res://prefabs/bunker.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SampleLibrary/junkie najmniejszy.smp" type="Sample" id=10]
+[ext_resource path="res://scripts/sample script.gd" type="Script" id=11]
+[ext_resource path="res://ScrollingBackground.gd" type="Script" id=12]
+[ext_resource path="res://assets/niebo-kosmos-neonowe.tex" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,7 +24,11 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SampleLibrary" id=3]
+
+"samples/junkie najmniejszy" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
+
+[node name="level" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
@@ -27,9 +36,10 @@ script/script = ExtResource( 1 )
 
 visibility/visible = false
 visibility/opacity = 0.425989
-transform/pos = Vector2( 400, 400 )
+transform/pos = Vector2( 12.0434, -96.7892 )
 z/relative = false
 texture = ExtResource( 2 )
+centered = false
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -308,14 +318,13 @@ gravity_point = false
 
 [node name="boundaries" type="Node2D" parent="."]
 
-editor/display_folded = true
 script/script = ExtResource( 7 )
 
 [node name="boundaryLeft" type="Area2D" parent="boundaries"]
 
 editor/display_folded = true
-transform/pos = Vector2( -5, 400 )
-transform/scale = Vector2( 0.78125, 12.5 )
+transform/pos = Vector2( -5, 458.514 )
+transform/scale = Vector2( 0.78125, 10.6714 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -334,8 +343,8 @@ _update_shape_index = 0
 [node name="boundaryRight" type="Area2D" parent="boundaries"]
 
 editor/display_folded = true
-transform/pos = Vector2( 805, 400 )
-transform/scale = Vector2( 0.78125, 12.5 )
+transform/pos = Vector2( 805, 463.141 )
+transform/scale = Vector2( 0.78125, 10.5269 )
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -362,10 +371,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 14.0
+margin/left = 13.0
+margin/top = -711.0
+margin/right = 93.0
+margin/bottom = -680.0
+custom_fonts/font = ExtResource( 8 )
 text = "Lives:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -377,10 +387,12 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 42.0
-margin/top = 0.0
-margin/right = 82.0
-margin/bottom = 14.0
+margin/left = 95.0
+margin/top = -711.0
+margin/right = 135.0
+margin/bottom = -680.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0.321569, 0.854902, 0.403922, 1 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
@@ -392,10 +404,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 16.0
-margin/right = 40.0
-margin/bottom = 30.0
+margin/left = 359.0
+margin/top = -711.0
+margin/right = 442.0
+margin/bottom = -669.0
+custom_fonts/font = ExtResource( 8 )
 text = "Score:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -407,10 +420,12 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 42.0
-margin/top = 17.0
-margin/right = 82.0
-margin/bottom = 31.0
+margin/left = 446.0
+margin/top = -711.0
+margin/right = 486.0
+margin/bottom = -680.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0.321569, 0.854902, 0.403922, 1 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
@@ -422,10 +437,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 32.0
-margin/right = 72.0
-margin/bottom = 46.0
+margin/left = 545.0
+margin/top = -712.0
+margin/right = 699.0
+margin/bottom = -681.0
+custom_fonts/font = ExtResource( 8 )
 text = "High score:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -437,10 +453,12 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 76.0
-margin/top = 33.0
-margin/right = 116.0
-margin/bottom = 47.0
+margin/left = 703.0
+margin/top = -711.0
+margin/right = 743.0
+margin/bottom = -680.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0.324142, 0.855469, 0.406793, 1 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
@@ -463,6 +481,23 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="YouWinLabel" type="Label" parent="UI"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -15.0
+margin/top = -412.0
+margin/right = 380.0
+margin/bottom = -398.0
+text = "Well done earthling, this time you win!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="enemyCFrom" type="Position2D" parent="."]
 
 transform/pos = Vector2( 790, 97 )
@@ -471,19 +506,19 @@ transform/pos = Vector2( 790, 97 )
 
 editor/display_folded = true
 
-[node name="bunker" parent="bunkers" instance=ExtResource( 8 )]
+[node name="bunker" parent="bunkers" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 152, 639 )
 
-[node name="bunker1" parent="bunkers" instance=ExtResource( 8 )]
+[node name="bunker1" parent="bunkers" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 312, 639 )
 
-[node name="bunker2" parent="bunkers" instance=ExtResource( 8 )]
+[node name="bunker2" parent="bunkers" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 482, 639 )
 
-[node name="bunker3" parent="bunkers" instance=ExtResource( 8 )]
+[node name="bunker3" parent="bunkers" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 642, 639 )
 
@@ -494,10 +529,70 @@ wait_time = 0.5
 one_shot = false
 autostart = true
 
+[node name="GameEndDelay" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 3 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+script/script = ExtResource( 11 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+motion/scale = Vector2( 1, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 4408, 0 )
+script/script = ExtResource( 12 )
+
+[node name="TextureFrame" type="TextureFrame" parent="ParallaxBackground/ParallaxLayer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 4408.0
+margin/bottom = 1600.0
+texture = ExtResource( 13 )
+stretch_mode = 0
+
 [connection signal="area_enter" from="boundaries/boundaryLeft" to="boundaries" method="_on_boundaryLeft_area_enter"]
 
 [connection signal="area_enter" from="boundaries/boundaryRight" to="boundaries" method="_on_boundaryRight_area_enter"]
 
 [connection signal="timeout" from="BombingTimer" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="GameEndDelay" to="." method="_on_GameEndDelay_timeout"]
 
 
