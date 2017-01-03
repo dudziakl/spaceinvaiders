@@ -1,18 +1,60 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://scripts/bunker.gd" type="Script" id=1]
 [ext_resource path="res://assets/bunk0.png" type="Texture" id=2]
+[ext_resource path="res://assets/bunk1.png" type="Texture" id=3]
+[ext_resource path="res://assets/bunk2.png" type="Texture" id=4]
+[ext_resource path="res://assets/bunk3.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12, 12 )
 
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=5]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=6]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=7]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=8]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=9]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=10]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="SpriteFrames" id=11]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
 [node name="bunker" type="Node2D"]
 
 [node name="topLeft" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -36, -12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -25,9 +67,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="topLeft"]
+[node name="Sprite" type="AnimatedSprite" parent="topLeft"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 2 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topLeft"]
 
@@ -37,7 +80,6 @@ _update_shape_index = 0
 
 [node name="topMiddleLeft" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -12, -12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -50,9 +92,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="topMiddleLeft"]
+[node name="Sprite" type="AnimatedSprite" parent="topMiddleLeft"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 3 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topMiddleLeft"]
 
@@ -62,7 +105,6 @@ _update_shape_index = 0
 
 [node name="topMiddleRight" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 12, -12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -75,9 +117,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="topMiddleRight"]
+[node name="Sprite" type="AnimatedSprite" parent="topMiddleRight"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 4 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topMiddleRight"]
 
@@ -87,7 +130,6 @@ _update_shape_index = 0
 
 [node name="topRight" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 36, -12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -100,9 +142,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="topRight"]
+[node name="Sprite" type="AnimatedSprite" parent="topRight"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 5 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topRight"]
 
@@ -112,7 +155,6 @@ _update_shape_index = 0
 
 [node name="leftMiddle" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -36, 12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -125,9 +167,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="leftMiddle"]
+[node name="Sprite" type="AnimatedSprite" parent="leftMiddle"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 6 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftMiddle"]
 
@@ -137,7 +180,6 @@ _update_shape_index = 0
 
 [node name="middleLeft" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -12, 12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -150,9 +192,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="middleLeft"]
+[node name="Sprite" type="AnimatedSprite" parent="middleLeft"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 7 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="middleLeft"]
 
@@ -162,7 +205,6 @@ _update_shape_index = 0
 
 [node name="middleRight" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 12, 12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -175,9 +217,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="middleRight"]
+[node name="Sprite" type="AnimatedSprite" parent="middleRight"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 8 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="middleRight"]
 
@@ -187,7 +230,6 @@ _update_shape_index = 0
 
 [node name="rightMiddle" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 36, 12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -200,9 +242,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="rightMiddle"]
+[node name="Sprite" type="AnimatedSprite" parent="rightMiddle"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 9 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightMiddle"]
 
@@ -212,7 +255,6 @@ _update_shape_index = 0
 
 [node name="bottomLeft" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -36, 36 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -225,9 +267,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="bottomLeft"]
+[node name="Sprite" type="AnimatedSprite" parent="bottomLeft"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 10 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottomLeft"]
 
@@ -237,7 +280,6 @@ _update_shape_index = 0
 
 [node name="bottomRight" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 36, 36 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -250,9 +292,10 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
 
-[node name="Sprite" type="Sprite" parent="bottomRight"]
+[node name="Sprite" type="AnimatedSprite" parent="bottomRight"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 11 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottomRight"]
 
