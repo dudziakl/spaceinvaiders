@@ -46,7 +46,7 @@ func destroy():
 		return
 	destroyed = true
 	#animate explode
-	#get_node("anim").play("explode")
+	get_node("AnimatedSprite/AnimationPlayer").play("inv_anim")
 	set_fixed_process(false)
 	#play explosion sound
 	#get_node("sfx").play("sound_explode")
@@ -56,8 +56,8 @@ func destroy():
 	if (is_in_group("bombers")): 
 		if(get_parent().get_child_count() > 1):
 			#print("Next enemy: " +get_parent().get_children()[1].get_name())
-			get_parent().get_children()[1].add_to_group("bombers") = true
-	queue_free()
+			get_parent().get_children()[1].add_to_group("bombers") = true	
+	##queue_free()
 	#check enemies left and if none then complete the level
 	get_node("/root/level").check_if_level_completed()
 	

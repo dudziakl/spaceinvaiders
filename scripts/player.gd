@@ -64,8 +64,8 @@ func hit_something():
 	get_node("/root/game_state").lives -= 1
 		
 	if (get_node("/root/game_state").lives < 1):
-		#get_node("anim").play("explode")
-		#get_node("sfx").play("sound_explode")		
+		get_node("AnimatedSprite/AnimationPlayer").play("gun_anim")
+		#get_node("sfx").play("sound_explode")
 		get_parent().level_failed()
 		set_fixed_process(false)
 		
@@ -74,7 +74,7 @@ func hit_something():
 		var pos = get_pos()
 		pos.x = 400
 		set_pos(pos)
-		#get_node("anim").play("explode")
+		get_node("AnimatedSprite/AnimationPlayer").play("gun_anim")
 		#get_node("sfx").play("sound_explode")
 
 func _on_ship_body_enter( body ):

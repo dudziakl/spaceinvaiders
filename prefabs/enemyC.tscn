@@ -39,7 +39,7 @@ animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 )
 
 [sub_resource type="Animation" id=5]
 
-resource/name = "inv_animation"
+resource/name = "inv_anim"
 length = 0.6
 loop = false
 step = 0.1
@@ -103,7 +103,7 @@ frame = 7
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/inv_animation = SubResource( 5 )
+anims/inv_anim = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
