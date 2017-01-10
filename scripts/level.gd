@@ -11,6 +11,7 @@ func _fixed_process(delta):
 	#update UI
 	get_node("UI/ScoreValue").set_text(str(get_node("/root/game_state").score))
 	get_node("UI/LivesValue").set_text(str(get_node("/root/game_state").lives))
+	get_node("UI/HighScoreValue").set_text(str(get_node("/root/game_state").highscore))
 
 func level_failed():
 	levelCompleted = false
