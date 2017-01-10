@@ -52,7 +52,7 @@ func player_shooting():
 		# Put it to parent so it is not moved by us
 		get_node("..").add_child(shoot)
 		# Play sound
-		#get_node("sfx").play("shoot")
+		get_node("SamplePlayer").play("gunlaser")
 		
 		#spawn Enemy Special ship depends on number of player shoots
 		if(shootCount != 15 and (shootCount == 22 or shootCount % 15 == 0)):
