@@ -71,10 +71,10 @@ func hit_something():
 		
 	else:
 		#add delay and restart position
+		get_node("AnimatedSprite/AnimationPlayer").play("gun_anim")
 		var pos = get_pos()
 		pos.x = 400
 		set_pos(pos)
-		get_node("AnimatedSprite/AnimationPlayer").play("gun_anim")
 		#get_node("sfx").play("sound_explode")
 
 func _on_ship_body_enter( body ):

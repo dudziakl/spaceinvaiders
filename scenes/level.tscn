@@ -43,10 +43,13 @@ centered = false
 
 [node name="enemies" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 7, -187 )
 __meta__ = { "_edit_group_":true }
 
 [node name="col1" type="Node2D" parent="enemies"]
+
+editor/display_folded = true
 
 [node name="enemyC1 2" parent="enemies/col1" groups=[ "bombers" ] instance=ExtResource( 3 )]
 
