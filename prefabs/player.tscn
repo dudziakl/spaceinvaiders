@@ -57,21 +57,36 @@ resource/name = "gun_anim"
 length = 1.0
 loop = false
 step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0, 12 ] }
-tracks/1/type = "method"
-tracks/1/path = NodePath("../sprite")
+tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ { "args":[ true ], "method":"set_indesctructible" } ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"hide" } ] }
+tracks/1/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0, 12 ] }
 tracks/2/type = "method"
 tracks/2/path = NodePath("../sprite")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"show" } ] }
+tracks/2/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"hide" } ] }
+tracks/3/type = "method"
+tracks/3/path = NodePath("../sprite")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"show" } ] }
+tracks/4/type = "method"
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"reset_position" } ] }
+tracks/5/type = "method"
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[ false ], "method":"set_indesctructible" } ] }
 
 [sub_resource type="SampleLibrary" id=9]
 
@@ -126,7 +141,6 @@ z/relative = false
 
 frames = SubResource( 7 )
 animation = "default"
-frame = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
 

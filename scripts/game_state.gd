@@ -3,7 +3,7 @@ extends Node
 
 var score = 0
 var highscore = 0
-var lives = 0
+export var lives = 0 
 
 func _ready():
 	var f = File.new()

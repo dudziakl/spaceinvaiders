@@ -6,6 +6,15 @@ const SPEED = 200
 var screen_size
 var prev_shooting = false
 var shootCount = 0
+var indestructible = false setget set_indesctructible
+var destroyed = false
+
+func set_indesctructible(value):
+	if(not destroyed):
+		prev_shooting = value
+		set_fixed_process(!value)
+		indestructible = value
+	#else may happend when user was destroyed for 3rd time and game over appear but after animation user still can move and shoot
 
 func _ready():
 	screen_size = get_viewport().get_rect().size
@@ -61,21 +70,20 @@ func player_shooting():
 			get_node("..").add_child(enemyS)
 
 func hit_something():
-	get_node("/root/game_state").lives -= 1
-		
-	if (get_node("/root/game_state").lives < 1):
-		get_node("AnimatedSprite/AnimationPlayer").play("gun_anim")
-		#get_node("sfx").play("sound_explode")
-		get_parent().level_failed()
-		set_fixed_process(false)
-		
-	else:
-		#add delay and restart position
-		get_node("AnimatedSprite/AnimationPlayer").play("gun_anim")
-		var pos = get_pos()
-		pos.x = 400
-		set_pos(pos)
-		#get_node("sfx").play("sound_explode")
+	if(not indestructible):
+		get_node("/root/game_state").lives -= 1
+			
+		if (get_node("/root/game_state").lives < 1):
+			get_node("AnimatedSprite/AnimationPlayer").play("gun_anim")
+			#get_node("sfx").play("sound_explode")
+			get_parent().level_failed()
+			destroyed = true #final destroy
+			set_fixed_process(false)
+			
+		else:
+			#add delay and restart position
+			get_node("AnimatedSprite/AnimationPlayer").play("gun_anim")		
+			#get_node("sfx").play("sound_explode")
 
 func _on_ship_body_enter( body ):
 	hit_something()
@@ -83,3 +91,8 @@ func _on_ship_body_enter( body ):
 func _on_ship_area_enter( area ):
 	if(area.is_in_group("enemies") and area.is_enemy()):
 		hit_something()
+
+func reset_position():
+	var pos = get_pos()
+	pos.x = 400
+	set_pos(pos)

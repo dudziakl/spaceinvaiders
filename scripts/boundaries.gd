@@ -16,3 +16,7 @@ func _on_boundaryRight_area_enter( area ):
 	if(area.is_in_group("enemies")):
 		#go left
 		horizontalDirection = -1
+
+func _on_boundaryBottom_area_enter( area ):
+	if(area.is_in_group("enemies")):
+		get_node("/root/level").level_failed()
