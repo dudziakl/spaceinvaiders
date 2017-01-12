@@ -28,5 +28,5 @@ func _hit_something():
 	hit = true
 	set_process(false)
 	#Animate splash
-	#get_node("anim").play("splash")
+	get_node("AnimatedSprite").play("laser_anim")
 	queue_free()
