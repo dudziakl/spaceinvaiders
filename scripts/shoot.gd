@@ -16,6 +16,8 @@ func _on_visibility_exit_screen():
 	queue_free()
 
 func _on_shoot_area_enter( area ):
+	if (hit):
+		return
 	#Hit an enemy
 	print("Hit: " + area.get_name())
 	if (area.has_method("destroy")):
@@ -28,5 +30,5 @@ func _hit_something():
 	hit = true
 	set_process(false)
 	#Animate splash
-	get_node("AnimatedSprite").play("laser_anim")
-	queue_free()
+	get_node("AnimatedSprite/AnimationPlayer").play("laser_anim")
+	#queue_free()
