@@ -4,7 +4,7 @@ extends Area2D
 export var points = 0
 
 var destroyed = false
-var horizontalSpeed = 1
+var horizontalSpeed = 0.7
 var verticalSpeed = 0.5 #0.03
 var direction = -1
 var acceleration = 1
